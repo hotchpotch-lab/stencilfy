@@ -3,6 +3,9 @@ import tailwind, { tailwindHMR } from 'stencil-tailwind-plugin';
 
 export const config: Config = {
   namespace: 'stencilfy',
+  devServer: {
+    port: 3000
+  },
   outputTargets: [
     {
       type: 'dist',

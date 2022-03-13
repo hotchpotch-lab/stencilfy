@@ -20,18 +20,31 @@
     "loader/"
   ],
   "scripts": {
-    "build": "stencil build --docs",
-    "start": "stencil build --dev --watch --serve",
+    "stencil:generate": "stencil generate",
+    "stencil:build": "stencil build --docs",
+    "stencil:start": "stencil build --dev --watch --serve",
+    
     "test": "stencil test --spec --e2e",
     "test:watch": "stencil test --spec --e2e --watchAll",
-    "generate": "stencil generate"
+
+    "storybook:build": "build-storybook -s dist",
+    "storybook:start": "yarn stencil:build && yarn storybook:build && start-storybook -p 3001 -s dist",
+    "dev": "concurrently --raw \"yarn storybook:start\" \"yarn stencil:start\""
   },
   "dependencies": {
     "@stencil/core": "^2.13.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.17.5",
     "@stencil/eslint-plugin": "^0.4.0",
+    "@storybook/addon-actions": "^6.4.19",
+    "@storybook/addon-essentials": "^6.4.19",
+    "@storybook/addon-links": "^6.4.19",
+    "@storybook/addon-notes": "^5.3.21",
+    "@storybook/html": "^6.4.19",
     "@types/jest": "^27.0.3",
+    "babel-loader": "^8.2.3",
+    "concurrently": "^7.0.0",
     "jest": "^27.4.5",
     "jest-cli": "^27.4.5",
     "puppeteer": "^10.0.0",
