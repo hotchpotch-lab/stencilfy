@@ -6,27 +6,38 @@ import { format } from '../../utils/utils';
   styleUrl: 'my-component.css',
   shadow: true,
 })
+
 export class MyComponent {
   /**
    * The first name
    */
   @Prop() first: string;
 
+
   /**
    * The middle name
    */
   @Prop() middle: string;
+
 
   /**
    * The last name
    */
   @Prop() last: string;
 
+
+  /**
+   * The text color
+   */
+  @Prop() textColor: string = 'black'
+
+
   private getText(): string {
     return format(this.first, this.middle, this.last);
   }
 
+
   render() {
-    return <div class="text-red-500">Hello, World! I'm {this.getText()}</div>;
+    return <div class={`font-bold text-${this.textColor}-500`}>Hello, World! I'm {this.getText()}</div>;
   }
 }

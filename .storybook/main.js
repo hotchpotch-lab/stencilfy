@@ -5,7 +5,7 @@ module.exports = {
   ],
   "addons": [
     "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    "@storybook/addon-notes/register"
-  ]
+    "@storybook/addon-essentials"
+  ],
+  "framework": "@storybook/html"
 }

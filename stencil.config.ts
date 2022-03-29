@@ -4,7 +4,9 @@ import tailwind, { tailwindHMR } from 'stencil-tailwind-plugin';
 export const config: Config = {
   namespace: 'stencilfy',
   devServer: {
-    port: 3000
+    port: 4000,
+    reloadStrategy: 'pageReload',
+    openBrowser: false
   },
   outputTargets: [
     {
@@ -26,5 +28,5 @@ export const config: Config = {
   plugins: [
     tailwind(),
     tailwindHMR()
-  ]
+  ],
 };
